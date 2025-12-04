@@ -33,8 +33,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     private final EmployeeRepository employeeRepository;
     private final EmployeeMapper employeeMapper;
     private final DepartmentRepository departmentRepository;
-    private final MetaFileRepository fileRepository;
-    private final MetaFileService fileService;
+    private final MetaFileRepository metaFileRepository;
+    private final MetaFileService metaFileService;
 
     @Override
     @Transactional
