@@ -21,7 +21,7 @@ public record DepartmentCreateRequestDto(
 
         @PastOrPresent(message = "설립일은 오늘 또는 과거여야 합니다.")
         @DateTimeFormat(pattern = "yyyy-MM-dd")
-        @NotBlank(message = "설립일은 필수입니다.")
+        @NotNull(message = "설립일은 필수입니다.")
         LocalDate establishedDate
 ) {
 

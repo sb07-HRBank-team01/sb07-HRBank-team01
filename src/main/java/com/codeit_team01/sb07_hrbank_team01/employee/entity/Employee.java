@@ -2,7 +2,7 @@ package com.codeit_team01.sb07_hrbank_team01.employee.entity;
 
 import com.codeit_team01.sb07_hrbank_team01.base.BaseEntity;
 import com.codeit_team01.sb07_hrbank_team01.department.entity.Department;
-import com.codeit_team01.sb07_hrbank_team01.file.entity.File;
+import com.codeit_team01.sb07_hrbank_team01.file.entity.MetaFile;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -38,7 +38,7 @@ public class Employee extends BaseEntity {
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "profile_id")
-    private File profile;
+    private MetaFile profile;
 
     @Column(name = "employee_no", nullable = false, unique = true, length = 50)
     private String employeeNo;
@@ -46,7 +46,7 @@ public class Employee extends BaseEntity {
     @Builder
     private Employee(String name, String email,
             String jobPosition, Department department,
-            Instant hireDate, String employeeNo, File profile) {
+            Instant hireDate, String employeeNo, MetaFile profile) {
         if (email == null || email.isEmpty()) {
             throw new IllegalArgumentException("이메일이 null이거나 empty면 안됩니다.");
         }
@@ -62,7 +62,7 @@ public class Employee extends BaseEntity {
 
     public void updateInfo(String name, String email,
                            String jobPosition, Department department,
-                           Instant hireDate, File profile) {
+                           Instant hireDate, MetaFile profile) {
         if (email == null || email.isEmpty()) {
             throw new IllegalArgumentException("이메일이 null이거나 empty면 안됩니다.");
         }

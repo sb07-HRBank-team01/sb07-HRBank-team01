@@ -14,10 +14,14 @@ public record ErrorResponseDto(
         String details
 ) {
     public static ErrorResponseDto from(CustomException e) {
+
+        String combinedMessage = String.format("[%s] %s",
+                e.getErrorCode().getCode(), e.getErrorCode().getMessage());
+
         return ErrorResponseDto.builder()
                 .timestamp(LocalDateTime.now().toString())
                 .status(e.getErrorCode().getStatus().value())
-                .message(e.getErrorCode().getMessage())
+                .message(combinedMessage)
                 .details(e.getDetails())
                 .build();
     }

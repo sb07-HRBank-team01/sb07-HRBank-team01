@@ -1,7 +1,7 @@
 package com.codeit_team01.sb07_hrbank_team01.backup.entity;
 
 import com.codeit_team01.sb07_hrbank_team01.base.BaseEntity;
-import com.codeit_team01.sb07_hrbank_team01.file.entity.File;
+import com.codeit_team01.sb07_hrbank_team01.file.entity.MetaFile;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -39,7 +39,7 @@ public class Backup extends BaseEntity {
 
   @OneToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "file_id")
-  private File file;
+  private MetaFile metaFile;
 
 
 }

@@ -1,9 +1,14 @@
 package com.codeit_team01.sb07_hrbank_team01.employee.service;
 
 import com.codeit_team01.sb07_hrbank_team01.employee.dto.request.EmployeeCreateRequestDto;
+import com.codeit_team01.sb07_hrbank_team01.employee.dto.request.EmployeeSearchConditionDto;
+import com.codeit_team01.sb07_hrbank_team01.employee.dto.request.EmployeeSearchPageRequestDto;
 import com.codeit_team01.sb07_hrbank_team01.employee.dto.request.EmployeeUpdateRequestDto;
+import com.codeit_team01.sb07_hrbank_team01.employee.dto.response.EmployeePageResponseDto;
 import com.codeit_team01.sb07_hrbank_team01.employee.dto.response.EmployeeResponseDto;
 import com.codeit_team01.sb07_hrbank_team01.file.dto.FileCreateRequestDto;
+
+import java.util.List;
 
 public interface EmployeeService {
     EmployeeResponseDto createEmployee(EmployeeCreateRequestDto employeeCreateRequestDto,
@@ -13,4 +18,6 @@ public interface EmployeeService {
                                        Long id);
     void deleteEmployee(Long id);
     EmployeeResponseDto getEmployee(Long id);
+    List<EmployeeResponseDto> getEmployeesBySearch(EmployeeSearchConditionDto employeeSearchConditionDto);
+    EmployeePageResponseDto getEmployeesByPageSearch(EmployeeSearchPageRequestDto employeeSearchPageRequestDto);
 }
