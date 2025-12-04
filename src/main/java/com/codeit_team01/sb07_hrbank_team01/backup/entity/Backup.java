@@ -1,6 +1,6 @@
 package com.codeit_team01.sb07_hrbank_team01.backup.entity;
 
-import com.codeit_team01.sb07_hrbank_team01.base.BaseEntity;
+import com.codeit_team01.sb07_hrbank_team01.base.BaseUpdateEntity;
 import com.codeit_team01.sb07_hrbank_team01.file.entity.MetaFile;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -23,7 +23,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @Getter
 @Table(name = "backups")
-public class Backup extends BaseEntity {
+public class Backup extends BaseUpdateEntity {
   @Column(name = "worker", nullable = false, length = 50)
   private String worker;
 

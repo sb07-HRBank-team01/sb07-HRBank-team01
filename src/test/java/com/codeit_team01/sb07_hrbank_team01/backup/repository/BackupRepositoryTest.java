@@ -75,7 +75,7 @@ class BackupRepositoryTest {
         .startTime(Instant.now())
         .endTime(Instant.now())
         .status(BackupStatus.IN_PROGRESS)
-        .file(null)
+        .metaFile(null)
         .build();
 
     backupRepository.save(backup);
