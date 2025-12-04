@@ -22,7 +22,7 @@ public class HistoryServiceImpl implements HistoryService {
     private final HistoryRepository historyRepository;
 
     // 직원 생성 이력 등록
-    @Transactional
+    @Transactional(readOnly = true)
     @Override
     public void createHistory(Employee employee, String memo, HttpServletRequest request) {
         //IP주소 자동 추출
@@ -37,7 +37,7 @@ public class HistoryServiceImpl implements HistoryService {
     }
 
     // 직원 수정 이력 등록
-    @Transactional
+    @Transactional(readOnly = true)
     @Override
     public void updateHistory(Employee beforeEmployee, Employee afterEmployee, String memo, HttpServletRequest request) {
         //IP주소 자동 추출
@@ -52,7 +52,7 @@ public class HistoryServiceImpl implements HistoryService {
     }
 
     // 직원 삭제 이력 등록
-    @Transactional
+    @Transactional(readOnly = true)
     @Override
     public void deleteHistory(Employee employee, String memo, HttpServletRequest request) {
         //IP주소 자동 추출
